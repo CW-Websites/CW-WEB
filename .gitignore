@@ -1,0 +1,33 @@
+# ===== OS junk =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+*.swp
+*~
+
+# ===== Microsoft Office lock files =====
+~$*
+
+# ===== Netlify =====
+.netlify/
+.cache/
+
+# ===== Node (if you ever add a build step later) =====
+node_modules/
+npm-debug.log*
+
+# ===== Environment variables (secrets — NEVER commit) =====
+.env
+.env.local
+.env.*.local
+
+# ===== Local backups =====
+*.bak
+*.tmp
+
+# ===== Claude Designer staging folder =====
+.cw-flat/
