@@ -1,0 +1,37 @@
+# Netlify configuration for CW-Website
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # The site is static (no build step) — we just publish files as-is.
+  # `publish` tells Netlify which folder is the "live site root".
+  # We point it at the repo root, and exclude /internal via [[redirects]] below.
+  publish = "."
+
+# -----------------------------------------------------------------------------
+# Block /internal/* from being publicly accessible.
+# Even though Netlify deploys the whole repo, this returns 404 for anyone
+# trying to visit /internal/anything — keeps wireframes, snapshots, source
+# files, and screenshots out of the public site.
+# -----------------------------------------------------------------------------
+[[redirects]]
+  from = "/internal/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# -----------------------------------------------------------------------------
+# Sensible defaults for a static marketing site.
+# -----------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Light security headers — safe defaults for a public marketing site.
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache images aggressively (they rarely change)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
