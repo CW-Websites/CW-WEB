@@ -62,6 +62,30 @@ function Breakthroughs({ rotateSeconds = 8 }) {
 
   const n = BREAKTHROUGHS.length;
 
+  // Deep-link via hash: #deliverables-<id>  (e.g. #deliverables-tnt)
+  // Scrolls to the section + jumps the reel to the matching slide.
+  useEffectBT(() => {
+    const handleHash = () => {
+      const h = window.location.hash || '';
+      const m = h.match(/^#deliverables-(.+)$/);
+      if (!m) return;
+      const target = m[1].toLowerCase();
+      const idx = BREAKTHROUGHS.findIndex(b => b.id === target);
+      if (idx >= 0) {
+        setI(idx);
+        setPaused(true);
+        const el = document.getElementById('deliverables');
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   // Auto-advance + progress
   useEffectBT(() => {
     startRef.current = Date.now();

@@ -56,7 +56,7 @@ function Contact() {
           <div className="contact__left">
             <div className="eyebrow">Contact</div>
             <h2 style={{marginTop: 18, fontSize: 'clamp(40px, 5.2vw, 80px)', lineHeight: 1, letterSpacing: '-0.035em', fontWeight: 400}}>
-              What&rsquo;s <span className="serif">next</span>?
+              What&rsquo;s <span className="accent">Next</span><span style={{marginLeft: '0.08em'}}>?</span>
             </h2>
             <p className="contact__left-sub">
               Tell us what you&rsquo;re trying to move — margin, velocity,

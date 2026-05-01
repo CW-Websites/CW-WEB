@@ -89,7 +89,7 @@ function Approach({ rotateSeconds = 8 }) {
       <div className="approach__banner">
         <div className="approach__banner-inner">
           <div className="approach__banner-big">
-            Achieve <span className="serif">breakthrough</span><br />results.
+            Achieve<br /><span className="approach__banner-bt">Breakthrough &raquo;</span><br />results.
           </div>
           <div className="approach__banner-body">
             Platform accelerations over bespoke builds. Direct stakeholder

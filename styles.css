@@ -136,6 +136,8 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
   color: var(--paper);
   border-radius: 999px;
   transition: background .2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav__cta:hover { background: var(--accent); color: var(--accent-ink); }
 @media (max-width: 820px) {
@@ -196,7 +198,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
 }
 
 .hero__title {
-  font-size: clamp(38px, 8.4vw, 134px);
+  font-size: clamp(30px, 6.3vw, 100px);
   line-height: 1;
   letter-spacing: -0.035em;
   font-weight: 400;
@@ -205,7 +207,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
   text-wrap: balance;
 }
 @media (max-width: 860px) {
-  .hero__title { font-size: clamp(36px, 8.8vw, 64px); }
+  .hero__title { font-size: clamp(28px, 6.6vw, 48px); }
 }
 .hero__title .serif { font-weight: 400; }
 .hero__title .accent { color: var(--accent); font-weight: 500; }
@@ -216,8 +218,8 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
 }
 
 .hero__sub {
-  margin-top: 24px;
-  font-size: clamp(17px, 1.5vw, 22px);
+  margin-top: 18px;
+  font-size: clamp(16px, 1.35vw, 20px);
   font-weight: 400;
   color: var(--ink);
   max-width: 60ch;
@@ -225,7 +227,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
 
 /* ——— Hero chart block ——————————————————————————————————————— */
 .hero__chart-wrap {
-  margin-top: 56px;
+  margin-top: 32px;
   width: 100%;
   max-width: 1100px;
   position: relative;
@@ -262,30 +264,45 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
   font-weight: 400;
 }
 
-/* Floating CTA at bottom of chart */
-.hero__chart-cta {
+/* Sample Deliverables pill bar — overlays bottom of chart, links to breakthroughs */
+.hero__deliverables {
   position: absolute;
-  bottom: 28px;
+  bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 24px;
-  background: var(--ink);
-  color: var(--paper);
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  font-weight: 500;
+  display: block;
+  width: min(720px, 86%);
   z-index: 3;
-  box-shadow: 0 8px 24px -8px rgba(11, 30, 63, 0.25);
-  transition: background .2s, transform .2s;
+  filter: drop-shadow(0 10px 28px rgba(11, 30, 63, 0.35));
+  transition: transform .2s, filter .2s;
 }
-.hero__chart-cta:hover {
-  background: var(--accent);
+.hero__deliverables img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero__deliverables:hover {
   transform: translateX(-50%) translateY(-2px);
+  filter: drop-shadow(0 14px 34px rgba(11, 30, 63, 0.42));
 }
-.hero__chart-cta svg { width: 14px; height: 14px; }
+.hero__deliverables-hot {
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .18s;
+}
+.hero__deliverables-hot span {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.hero__deliverables-hot:hover {
+  background: rgba(200, 71, 43, 0.18);
+}
 
 .hero__ctas { margin-top: 44px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center; }
 .btn {
@@ -1046,7 +1063,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
   margin: 0 auto;
   padding: 0 var(--pad);
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: minmax(380px, auto) 1fr;
   gap: 40px;
   align-items: center;
 }
@@ -1056,6 +1073,12 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
   letter-spacing: -0.03em; font-weight: 400; line-height: 1;
 }
 .approach__banner-big .serif { color: var(--accent); }
+.approach__banner-big .approach__banner-bt {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
 .approach__banner-body {
   font-size: 17px; line-height: 1.55; color: rgba(247,245,239,0.75);
   max-width: 60ch;
@@ -1073,6 +1096,12 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
   line-height: 1; letter-spacing: -0.035em; font-weight: 400;
 }
 .contact__left h2 .serif { color: var(--accent); }
+.contact__left h2 .accent {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.12em;
+  letter-spacing: -0.04em;
+}
 .contact__left-sub { margin-top: 24px; color: var(--mute); font-size: 18px; line-height: 1.5; max-width: 40ch; }
 .contact__card {
   margin-top: 40px;

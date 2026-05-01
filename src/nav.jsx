@@ -29,26 +29,26 @@ function Nav({ sections }) {
           <span className="nav__tagline">achieve breakthrough results</span>
         </a>
         <div className="nav__links">
-          {NAV_LINKS.map(l => (
-            <a
-              key={l.id}
-              href={'#' + l.id}
-              className={'nav__link' + (active === l.id ? ' active' : '')}
-            >
+          {NAV_LINKS.map((l) =>
+          <a
+            key={l.id}
+            href={'#' + l.id}
+            className={'nav__link' + (active === l.id ? ' active' : '')}>
+            
               <span className="dot" />{l.label}
             </a>
-          ))}
+          )}
         </div>
         <a href="#contact" className="nav__cta">Contact Us →</a>
       </div>
       <div className="nav__strip">
         <span className="nav__strip-badge">
           <span className="pulse" />
-          <span className="mono">Est. Falls Church, VA · Operating 24 × 7</span>
+          <span className="mono">FALLS CHURCH, VA · OPERATING 24 × 7</span>
         </span>
       </div>
-    </nav>
-  );
+    </nav>);
+
 }
 
 window.Nav = Nav;

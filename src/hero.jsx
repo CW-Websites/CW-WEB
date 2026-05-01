@@ -149,7 +149,7 @@ function Hero() {
           Revenue &amp; Margin<br /><span className="hero__highlight">Optimizations</span>
         </h1>
 
-        <p className="hero__sub">Platform Accelerated Solutions to Scale Margin and Maximize Revenue Velocity
+        <p className="hero__sub">Platform Accelerated Solutions to Scale Margin and Maximize Revenue Growth
 
         </p>
 
@@ -165,12 +165,18 @@ function Hero() {
 
           <HeroChart />
 
-          <a href="#deliverables" className="hero__chart-cta">
-            See the breakthroughs
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </a>
+          <div className="hero__deliverables" aria-label="Sample deliverables — jump to a specific case in Breakthroughs Delivered">
+            <img src="assets/deliverables-bar.png" alt="Sample Deliverables: Track/Trace, OTC Anywhere, Coordinate" />
+            <a href="#deliverables-tnt"    className="hero__deliverables-hot" style={{left: '21%',  width: '22%'}} aria-label="Jump to Track/Trace breakthrough">
+              <span>Track/Trace</span>
+            </a>
+            <a href="#deliverables-otc"    className="hero__deliverables-hot" style={{left: '46%',  width: '20%'}} aria-label="Jump to OTC Anywhere breakthrough">
+              <span>OTC Anywhere</span>
+            </a>
+            <a href="#deliverables-change" className="hero__deliverables-hot" style={{left: '70%',  width: '26%'}} aria-label="Jump to Coordinate breakthrough">
+              <span>Coordinate</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>);
