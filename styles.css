@@ -1074,8 +1074,8 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
 }
 .approach__banner-big .serif { color: var(--accent); }
 .approach__banner-big .approach__banner-bt {
-  color: var(--accent);
-  font-weight: 800;
+  color: #1F8A4C;
+  font-weight: 600;
   letter-spacing: -0.04em;
   white-space: nowrap;
 }
@@ -1098,9 +1098,6 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 500; letter-spacing: -0.
 .contact__left h2 .serif { color: var(--accent); }
 .contact__left h2 .accent {
   color: var(--accent);
-  font-weight: 700;
-  font-size: 1.12em;
-  letter-spacing: -0.04em;
 }
 .contact__left-sub { margin-top: 24px; color: var(--mute); font-size: 18px; line-height: 1.5; max-width: 40ch; }
 .contact__card {
