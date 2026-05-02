@@ -11,6 +11,13 @@ function Contact() {
 
   const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
 
+  const reset = () => {
+    setForm({ name: '', email: '', comment: '' });
+    setErrors({});
+    setSent(false);
+    setSubmitError(null);
+  };
+
   const submit = async (e) => {
     e.preventDefault();
     const errs = {};
@@ -97,8 +104,17 @@ function Contact() {
 
           <form className="form" onSubmit={submit} noValidate>
             {sent ? (
-              <div className="form__success">
-                <strong>Received.</strong> We&rsquo;ll be in touch within one business day.
+              <div className="form__success" role="status" aria-live="polite">
+                <div className="form__success-mark" aria-hidden="true">
+                  <img src="assets/check-circle-green.png" alt=""/>
+                </div>
+                <h3>Thanks &mdash; we got it.</h3>
+                <p>
+                  Your message is in. A member of the CoorWorks team will be in touch within one business day.
+                </p>
+                <button type="button" className="btn btn--ghost" onClick={reset}>
+                  Send another
+                </button>
               </div>
             ) : (
               <>
