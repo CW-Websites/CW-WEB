@@ -216,6 +216,11 @@ function Footer() {
 
         <div className="footer__legal">
           <span>© {new Date().getFullYear()} CoorWorks, Inc. All rights reserved.</span>
+          <span className="footer__legal-links">
+            <a href="terms.html">Terms of Use</a>
+            <span className="sep">·</span>
+            <a href="privacy.html">Privacy Policy</a>
+          </span>
           <span>Operating 24 × 7 · v3.0</span>
         </div>
       </div>
